@@ -216,6 +216,7 @@
                             </div>
 
                             <input type="text" id="idPerhitungan" name="idPerhitungan" value="{{$id}}" hidden>
+                            
                             <div class="form-group ">
                                 <label for="bukti">Bukti</label>
                                 <input class="form-control @error('bukti') is-invalid @enderror" type="file" id="bukti" name="bukti">

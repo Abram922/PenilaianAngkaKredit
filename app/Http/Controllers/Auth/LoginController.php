@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\userjabatan;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -15,7 +18,7 @@ class LoginController extends Controller
     |--------------------------------------------------------------------------
     |
     | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
+| redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
     */
@@ -52,8 +55,16 @@ class LoginController extends Controller
             if(auth()->user()->is_admin == 1){
                 return redirect()-> route('admin.home');
             }
-            else{
-                return view('.layouts.userhomepage');
+            else{  
+                $userjabatan = DB::table('userjabatans')
+                ->where('id_user', auth()->user()->id)
+                ->first();
+
+                if($userjabatan) {                   
+                    return redirect()->route('user.home');
+                } else {
+                    return redirect()->route('namasa');
+                }
             }
         }else{
             return redirect()->route('login')->with('error', "email atau password tidak tepat");

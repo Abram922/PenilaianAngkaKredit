@@ -5,25 +5,30 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JabatanFungsionalPref extends Model
+class jabatan extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'jabatan',
         'angkaKreditKumulatif',
         'pelaksanaanPendidikan',
-        'pelaksaanPenelitian',
+        'pelaksanaanPenelitian',
         'pelaksanaanPengabdianMasyarakat',
         'penunjang'
-
     ];
 
+    public function userjabatanrpref(){
+        return $this->hasMany(userjabatan::class);
+    }
 
-    public function user(){
-        return $this->hasMany(User::class);
+    public function userjabatannext(){
+        return $this->hasMany(userjabatan::class);
     }
-    
-    public function akumulasiperhitunganxjbf(){
-        return $this->hasMany(akumulasiPerhitungan::class);
-    }
+
+
+
+
+
+
 }

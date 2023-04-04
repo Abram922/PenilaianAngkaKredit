@@ -9,7 +9,6 @@ class JabatanFungsionalNext extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
         'jabatan',
         'angkaKreditKumulatif',
         'pelaksanaanPendidikan',
@@ -21,7 +20,7 @@ class JabatanFungsionalNext extends Model
 
 
     public function user(){
-        return $this->belongsTo('App\Models\User', 'user_id', 'id');
+        return $this->hasMany(User::class);
     }
     public function akumulasiperhitungaxjbn(){
         return $this->hasMany(akumulasiPerhitungan::class);

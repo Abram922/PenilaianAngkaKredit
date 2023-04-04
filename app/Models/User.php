@@ -23,13 +23,18 @@ class User extends Authenticatable
     }
 
     public function jabatanfungsisonalpref(){
-        return $this->hasMany(jabatanFungsionalPref::class);
+        return $this->belongsTo('App\Models\jabatanFungsionalPref','jabatan_pref', 'id_jabatan_pref');
     }
     public function jabatanfungsisonalnext(){
-        return $this->hasMany(jabatanFungsionalNext::class);
+        return $this->belongsTo('App\Models\jabatanFungsionalPref','jabatan_next', 'id_jabatan_next');
     }
+    
     public function akumulasiperhitungan(){
         return $this->hasMany(akumulasiPerhitungan::class);
+    }
+
+    public function userjabatan(){
+        return $this->hasMany(userjabatan::class);
     }
 
     /**
@@ -41,6 +46,17 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'judulkum',
+        'jabatan_pref',
+        'jabatan_next',
+        'nip',
+        'pendidikan_terakhir',
+        'mata_kuliah_yang_diampu',
+        'bidang_ilmu',
+        'foto'
+
+
+
     ];
 
     /**

@@ -29,8 +29,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
 // jabatan fungsional pref
-        \App\Models\jabatanFungsionalPref::create([
-            'user_id' => '1',
+        \App\Models\jabatan::create([
+       
             'jabatan' => 'Asisten Ahli',
             'angkaKreditKumulatif' => 200 ,
             'pelaksanaanPendidikan' => 55 ,
@@ -39,8 +39,8 @@ class DatabaseSeeder extends Seeder
             'penunjang'=> 10 
         ]);
 
-        \App\Models\jabatanFungsionalPref::create([
-            'user_id' => '1',
+        \App\Models\jabatan::create([
+   
             'jabatan' => 'Lektor',
             'angkaKreditKumulatif' => 300 ,
             'pelaksanaanPendidikan' => 45 ,
@@ -49,8 +49,8 @@ class DatabaseSeeder extends Seeder
             'penunjang'=> 10 
         ]);
 
-        \App\Models\jabatanFungsionalPref::create([
-            'user_id' => '1',
+        \App\Models\jabatan::create([
+         
             'jabatan' => 'Lektor Kepala',
             'angkaKreditKumulatif' => 400 ,
             'pelaksanaanPendidikan' => 40 ,
@@ -60,8 +60,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        \App\Models\jabatanFungsionalPref::create([
-            'user_id' => '1',
+        \App\Models\jabatan::create([
+
             'jabatan' => 'Professor',
             'angkaKreditKumulatif' => 700 ,
             'pelaksanaanPendidikan' => 35 ,
@@ -70,47 +70,6 @@ class DatabaseSeeder extends Seeder
             'penunjang'=> 10 
         ]);
 
-// jabatan fungsional Next
-        \App\Models\jabatanFungsionalNext::create([
-            'user_id' => '1',
-            'jabatan' => 'Asisten Ahli',
-            'angkaKreditKumulatif' => 200 ,
-            'pelaksanaanPendidikan' => 55 ,
-            'pelaksanaanPenelitian' => 25 ,
-            'pelaksanaanPengabdianMasyarakat' => 10 ,
-            'penunjang'=> 10 
-        ]);
-
-        \App\Models\jabatanFungsionalNext::create([
-            'user_id' => '1',
-            'jabatan' => 'Lektor',
-            'angkaKreditKumulatif' => 300 ,
-            'pelaksanaanPendidikan' => 45 ,
-            'pelaksanaanPenelitian' => 35 ,
-            'pelaksanaanPengabdianMasyarakat' => 10 ,
-            'penunjang'=> 10 
-        ]);
-
-        \App\Models\jabatanFungsionalNext::create([
-            'user_id' => '1',
-            'jabatan' => 'Lektor Kepala',
-            'angkaKreditKumulatif' => 400 ,
-            'pelaksanaanPendidikan' => 40 ,
-            'pelaksanaanPenelitian' => 40 ,
-            'pelaksanaanPengabdianMasyarakat' => 10 ,
-            'penunjang'=> 10 
-        ]);
-
-
-        \App\Models\jabatanFungsionalNext::create([
-            'user_id' => '1',
-            'jabatan' => 'Professor',
-            'angkaKreditKumulatif' => 700 ,
-            'pelaksanaanPendidikan' => 35 ,
-            'pelaksanaanPenelitian' => 45 ,
-            'pelaksanaanPengabdianMasyarakat' => 10 ,
-            'penunjang'=> 10 
-        ]);
 
 
 // jabatan kategori
@@ -142,12 +101,7 @@ class DatabaseSeeder extends Seeder
 
 
 
-        \App\Models\akumulasiPerhitungan::create([
-            'user_id' => '2',
-            'jabatan_pref' => 1,
-            'jabatan_next' =>2,
-            'judul' => 'KUM 1'
-        ]);
+     
 
         \App\Models\pelaksanaanpdp::create(
             [

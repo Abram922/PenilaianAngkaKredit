@@ -83,9 +83,6 @@ class komponenPakController extends Controller
         $komponenpak->batasmaxdiakui = $request['batasmaxdiakui'];
         $komponenpak->score = $request['score'];
         $komponenpak->save();
-
-
-
         return redirect()->route('komponenpak.index')->with('success', "Data berhasil diubah");
     }
 

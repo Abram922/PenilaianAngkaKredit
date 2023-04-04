@@ -39,11 +39,6 @@
                         </div>
                     </div>
 
-                    
-
-
-
-
                     <div class="mb-3 row">
                         <label for="jabatan_next" class="col-sm-2 col-form-label">Jabatan Di Usulkan</label>
                         <div class="col-sm-9">
@@ -92,9 +87,6 @@
                         </div>
                     </div>
                     </div>
-
-              
-
                 <button  class="btn btn-primary btn-lg" type="submit">Submit</button>
                 </form>
             </div>            

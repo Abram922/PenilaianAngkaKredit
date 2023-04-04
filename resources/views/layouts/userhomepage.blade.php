@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -79,9 +77,10 @@
                         <a class="nav-link" href="/homeuser">Beranda</a>
                     </li>
                     <li class="nav-item" text-align: center;>
-                        <a class="nav-link" href="/userpak">Perhitungan</a>
+                        <a class="nav-link" href="{{ route('userjabatan.index') }}">Perhitungan</a>
                     </li>
                 </ul>
+                
                 <ul class="navbar-nav ">
 
                 </ul>
@@ -120,7 +119,7 @@
                                 </div>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" > kjbzfdk ndl;        </a>
+                                    <a class="dropdown-item" >    </a>
                                 </div>
                             </li>
                         @endguest

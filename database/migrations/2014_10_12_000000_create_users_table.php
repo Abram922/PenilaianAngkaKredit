@@ -15,7 +15,8 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('jabatan_terakhir')->nullable();
+            // $table->integer('jabatan_pref')->unsigned();
+            // $table->integer('jabatan_next')->unsigned();
             $table->integer('nip')->nullable();
             $table->string('pendidikan_terakhir')->nullable();
             $table->string('mata_kuliah_yang_diampu')->nullable();
@@ -24,8 +25,11 @@ return new class extends Migration
             $table->boolean('is_admin')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('judulkum')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            // $table->foreign('jabatan_pref')->references('id_jabatan_pref')->on('jabatan_fungsional_prefs')->onDelete('cascade');
+            // $table->foreign('jabatan_next')->references('id_jabatan_next')->on('jabatan_fungsional_nexts')->onDelete('cascade');
         });
     }
 

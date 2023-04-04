@@ -52,7 +52,14 @@ class AkumulasiPerhitunganController extends Controller
         ]);
         $input['user_id'] = auth()->user()->id;
 
+        
+ 
         akumulasiPerhitungan::create($input);
+
+
+        $data = new User();
+        $data->judulkum = $request->judul;
+        $data->save();
 
         return redirect()->route('perhitungan.index')->with('success', "Data berhasil ditambah");
     }

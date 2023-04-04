@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('unsur_pendidikan_pengajarans', function (Blueprint $table) {
             $table->increments('id_pdp');
-            $table->integer('idPerhitungan')->unsigned();
             $table->integer('idkomponen')->unsigned()->nullable();
             $table->integer('idjenispelaksanaan')->unsigned()->nullable();
             $table->string('namaKegiatan')->nullable();
@@ -24,9 +23,10 @@ return new class extends Migration
             $table->integer('jumlahAngkaKredit')->nullable();
             $table->integer('volumeDosen')->nullable();
             $table->string('keteranganKegiatan')->nullable();
+            $table->string('Kelebihan')->nullable();
             $table->timestamps();
 
-            $table->foreign('idPerhitungan')->references('id')->on('akumulasi_perhitungans')->onDelete('cascade');
+          
             $table->foreign('idkomponen')->references('id')->on('komponen_paks')->onDelete('cascade');
             $table->foreign('idjenispelaksanaan')->references('id')->on('pelaksanaanpdps')->onDelete('cascade');
         });

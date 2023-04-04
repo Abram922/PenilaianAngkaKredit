@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jabatan_fungsional_nexts', function (Blueprint $table) {
-            $table->increments('id_jabatan_next');
-            $table->integer('user_id')->unsigned();
+        Schema::create('jabatans', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('jabatan');
             $table->integer('angkaKreditKumulatif');
             $table->integer('pelaksanaanPendidikan');
@@ -21,8 +20,6 @@ return new class extends Migration
             $table->integer('pelaksanaanPengabdianMasyarakat');
             $table->integer('penunjang');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jabatan_fungsional_nexts');
+        Schema::dropIfExists('jabatans');
     }
 };

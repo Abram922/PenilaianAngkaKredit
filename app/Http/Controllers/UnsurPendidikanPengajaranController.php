@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\akumulasiPerhitungan;
+use App\Models\pelaksanaanpdp;
 use App\Models\unsurPendidikanPengajaran;
 use App\Http\Controllers\Controller;
 use App\Models\komponenPak;
@@ -15,7 +16,12 @@ class UnsurPendidikanPengajaranController extends Controller
      */
     public function index()
     {
-        //
+        return view('.pendidikandanpengajaran.index');
+    }
+
+    public function input(){
+        $pelaksanaanpdps = pelaksanaanpdp::all();
+        return view('.pendidikandanpengajaran.inputdatapengajaran',compact('pelaksanaanpdps'));
     }
 
     /**
@@ -30,27 +36,7 @@ class UnsurPendidikanPengajaranController extends Controller
      */
     public function store(Request $request)
     {
-        
-
-        // $input = $request->validate([
-        //     'namaKegiatan' => 'string',
-        //     'tempatInstansi'=> 'string',
-        //     'sks' => 'string',
-        //     'bukti' => 'required|file|mimes:jpeg,png,jpg,pdf,svg|max:2048',
-        //     'jumlahkelas' => 'integer',
-        //     'jumlahAngkaKredit' => 'decimal',
-        //     'volumeDosen' => 'integer',
-        //     'keteranganKegiatan' => 'integer',
-        //     'idkomponen' => 'integer',
-        //     'idPerhitungan'=> 'integer',
-        //     'idjenispelaksanaan' => 'integer'
-            
-        // ]);
-        // // 
-        // $input['jumlahAngkaKredit'] = $request->jumlahAngkaKredit;
-
         $data = new unsurPendidikanPengajaran();
-
         $data->namaKegiatan = $request->namaKegiatan;
         $data->tempatInstansi = $request->tempatInstansi;
         $data->sks = $request->sks;
@@ -59,8 +45,6 @@ class UnsurPendidikanPengajaranController extends Controller
         $data->jumlahAngkaKredit = $request->kelasxvdosen;
         $data->volumeDosen = $request->volumeDosen;
         $data->keteranganKegiatan = $request->keteranganKegiatan;
-        $data->idkomponen = $request->idkomponen;
-        $data->idPerhitungan = $request->idPerhitungan;
         $data->idjenispelaksanaan = $request->idjenispelaksanaan;
         $data->save();
 
@@ -75,7 +59,8 @@ class UnsurPendidikanPengajaranController extends Controller
 
 
         session(['success_insert' => "Berhasil menambahkan data pasar"]);
-        return redirect('/perhitungan');
+        //return redirect()->route('');
+        return view('.pendidikandanpengajaran.datapelaksanaanpendidikan');
         
     }
 
